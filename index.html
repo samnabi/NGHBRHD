@@ -1,0 +1,122 @@
+<!--
+To do:
+  - Test with screen readers / voice control
+  - Better road design
+  - Better transportation algorithm
+  - Better keyboard control discovery
+  - Clean up CSS
+  - Clean up HTML (obsolete input names)
+  - Package everything into one html file
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Set sensible character encoding -->
+  <meta charset="utf-8">
+
+  <!-- Tell IE to use the highest possible version, regardless of Compatibility Mode -->
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+
+  <!-- Use native font size and zoom level -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Page title and description -->
+  <title>NGHBRHD</title>
+  <meta name="description" content="A 10k citybuilding puzzle">
+
+  <!-- Load styles -->
+  <link rel="stylesheet" href="full.css">
+
+</head>
+<body>
+<details class="instructions">
+  <summary><em>NGHBRHD: A tiny city-building game</em></summary>
+  <p><strong>This is your NGHBRHD.</strong> Click on a block, then choose what to build.</p>
+  <p>Park or factory? Office or apartment building? The choice is yours.</p>
+  <p>Keep an eye on the stats to see how your NGHBRHD is progressing.</p>
+  <p><em>Created by <a href="http://samnabi.com" target="_blank">Sam Nabi</a>. Icons courtesy <a href="https://icons8.com" target="_blank">Icons8</a>.</em></p>
+</details>
+
+<form>
+  <fieldset id="typologies" class="">
+    <span>Build</span>
+    <label title="Keyboard shortcut: Z">
+      <input id="z" tabindex=1 type="radio" name="t" value="">
+    </label>
+    <span>or</span>
+    <label title="Keyboard shortcut: X">
+      <input id="x" tabindex=2 type="radio" name="t" value="">
+    </label>
+  </fieldset>
+  <fieldset class="board">
+    <label><input type="radio" name="q" value="a1"><div></div></label>
+    <label class="road-right"><input type="radio" name="q" value="a2"><div></div></label>
+    <label><input type="radio" name="q" value="a3"><div></div></label>
+    <label class="road-right"><input type="radio" name="q" value="a4"><div></div></label>
+    <label><input type="radio" name="q" value="a5"><div></div></label>
+    <label><input type="radio" name="q" value="a6"><div></div></label> <br>
+
+    <label class="road-bottom"><input type="radio" name="q" value="b1"><div></div></label>
+    <label class="road-bottom road-right"><input type="radio" name="q" value="b2"><div></div></label>
+    <label class="road-bottom"><input type="radio" name="q" value="b3"><div></div></label>
+    <label class="road-bottom road-right"><input type="radio" name="q" value="b4"><div></div></label>
+    <label class="road-bottom"><input type="radio" name="q" value="b5"><div></div></label>
+    <label class="road-bottom"><input type="radio" name="q" value="b6"><div></div></label> <br>
+
+    <label><input type="radio" name="q" value="c1"><div></div></label>
+    <label class="road-right"><input type="radio" name="q" value="c2"><div></div></label>
+    <label><input type="radio" name="q" value="c3"><div></div></label>
+    <label class="road-right"><input type="radio" name="q" value="c4"><div></div></label>
+    <label><input type="radio" name="q" value="c5"><div></div></label>
+    <label><input type="radio" name="q" value="c6"><div></div></label> <br>
+
+    <label class="road-bottom"><input type="radio" name="q" value="d1"><div></div></label>
+    <label class="road-bottom road-right"><input type="radio" name="q" value="d2"><div></div></label>
+    <label class="road-bottom"><input type="radio" name="q" value="d3"><div></div></label>
+    <label class="road-bottom road-right"><input type="radio" name="q" value="d4"><div></div></label>
+    <label class="road-bottom"><input type="radio" name="q" value="d5"><div></div></label>
+    <label class="road-bottom"><input type="radio" name="q" value="d6"><div></div></label> <br>
+
+    <label><input type="radio" name="q" value="e1"><div></div></label>
+    <label class="road-right"><input type="radio" name="q" value="e2"><div></div></label>
+    <label><input type="radio" name="q" value="e3"><div></div></label>
+    <label class="road-right"><input type="radio" name="q" value="e4"><div></div></label>
+    <label><input type="radio" name="q" value="e5"><div></div></label>
+    <label><input type="radio" name="q" value="e6"><div></div></label> <br>
+
+    <label><input type="radio" name="q" value="f1"><div></div></label>
+    <label class="road-right"><input type="radio" name="q" value="f2"><div></div></label>
+    <label><input type="radio" name="q" value="f3"><div></div></label>
+    <label class="road-right"><input type="radio" name="q" value="f4"><div></div></label>
+    <label><input type="radio" name="q" value="f5"><div></div></label>
+    <label><input type="radio" name="q" value="f6"><div></div></label>
+  </fieldset>
+</form>
+
+<div class="stats">
+  <div>
+    <h2>Jobs vs. housing</h2>
+    <span style="width: 100%;" class="people">0 residents</span>
+    <span style="width: 100%;" class="jobs">0 jobs</span>
+
+    <h2>Transportation</h2>
+    <span style="width: 100%;" class="walk">0% walk</span>
+    <span style="width: 100%;" class="bike">0% bike</span>
+    <span style="width: 100%;" class="drive">0% drive</span>
+  </div>
+  <div>
+    <h2>Green space per person</h2>
+    <div style="display: flex; flex-direction: column-reverse;">
+      <span class="greenspace" style="order: 52; width: calc(52 / 52 * 100%)"> 52 m<sup>2</sup> Curitiba, Brazil</span>
+      <span class="greenspace" style="order: 23; width: calc(23 / 52 * 100%)"> 23 m<sup>2</sup> New York City, USA</span>
+      <span class="greenspace" style="order: 11; width: calc(11 / 52 * 100%)"> 11 m<sup>2</sup> Paris, France</span>
+      <span class="greenspace" style="order: 3; width: calc(3 / 52 * 100%)"> 3 m<sup>2</sup> Tokyo, Japan</span>
+      <span style="width: 0%;" class="greenspace active">Your neighbourhood</span>
+    </div>
+  </div>
+</div>
+
+<script src="full.js"></script>
+
+</body>
+</html>
